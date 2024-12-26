@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Vault</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            margin: 0;
+            padding: 50px;
+        }
+        .vault {
+            display: none;
+            margin-top: 20px;
+        }
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter the Vault Passcode</h1>
+    <input type="password" id="passcode" placeholder="Enter Passcode">
+    <button onclick="checkPasscode()">Unlock</button>
+    <div class="vault" id="vault">
+        <h2>Vault Content</h2>
+        <p>The secret message is: "You solved it!"</p>
+    </div>
+    <script>
+        function checkPasscode() {
+            const passcode = document.getElementById('passcode').value;
+            if (passcode === "1234") {
+                document.getElementById('vault').style.display = 'block';
+            } else {
+                alert("Incorrect passcode. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>
